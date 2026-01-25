@@ -1,0 +1,126 @@
+---
+import { Image } from "astro:assets";
+import logo from "../assets/logo.png";
+// src/components/Navbar.astro
+---
+
+<nav
+  class="fixed top-0 w-full z-50 bg-[#1d82b8] backdrop-blur-md border-b border-slate-200 shadow-sm transition-all"
+>
+  <div
+    class="max-w-7xl mx-auto px-4 md:px-12 h-20 flex justify-between items-center relative"
+  >
+    <div class="flex items-center gap-3 cursor-pointer group z-50">
+      <Image
+        src={logo}
+        alt="Logo"
+        class="max-w-[160px] h-auto invert brightness-0"
+      />
+    </div>
+
+    <ul
+      class="hidden md:flex items-center gap-10 text-slate-600 font-semibold text-sm uppercase tracking-wide"
+    >
+      <li>
+        <a
+          href="#servicios"
+          class="text-white transition-colors py-2 border-b-2 border-transparent hover:border-[#2499D6]"
+          >Servicios</a
+        >
+      </li>
+      <li>
+        <a
+          href="#nosotros"
+          class="text-white transition-colors py-2 border-b-2 border-transparent hover:border-[#2499D6]"
+          >Nosotros</a
+        >
+      </li>
+      <li>
+        <a
+          href="#contacto"
+          class="text-white transition-colors py-2 border-b-2 border-transparent hover:border-[#2499D6]"
+          >Contacto</a
+        >
+      </li>
+    </ul>
+
+    <button
+      id="menu-btn"
+      class="md:hidden z-50 text-white focus:outline-none p-2 rounded-md transition-colors"
+    >
+      <svg
+        id="icon-menu"
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-8 h-8"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+      <svg
+        id="icon-close"
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-8 h-8 hidden"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+  </div>
+
+  <div
+    id="mobile-menu"
+    class="hidden absolute top-20 left-0 w-full bg-[#1d82b8] shadow-xl flex-col items-center py-8 space-y-6 md:hidden transition-all duration-300 origin-top"
+  >
+    <a href="#servicios" class="text-white font-bold text-lg mobile-link"
+      >Servicios</a
+    >
+    <a href="#nosotros" class="text-white font-bold text-lg mobile-link"
+      >Nosotros</a
+    >
+
+    <a href="#contacto" class="text-white font-bold mobile-link"> Contactar </a>
+  </div>
+</nav>
+
+<script>
+  // Seleccionamos los elementos del DOM
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const iconMenu = document.getElementById("icon-menu");
+  const iconClose = document.getElementById("icon-close");
+  const mobileLinks = document.querySelectorAll(".mobile-link");
+
+  // Función para alternar el menú
+  if (menuBtn && mobileMenu && iconMenu && iconClose) {
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden"); // Muestra/Oculta el menú
+      mobileMenu.classList.toggle("flex"); // Asegura display flex cuando está visible
+
+      // Alternar iconos (Hamburguesa vs X)
+      iconMenu.classList.toggle("hidden");
+      iconClose.classList.toggle("hidden");
+    });
+
+    // Cerrar el menú automáticamente cuando se hace click en un enlace
+    mobileLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+        mobileMenu.classList.remove("flex");
+        iconMenu.classList.remove("hidden");
+        iconClose.classList.add("hidden");
+      });
+    });
+  }
+</script>

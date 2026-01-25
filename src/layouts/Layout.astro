@@ -1,23 +1,70 @@
+---
+// src/layouts/Layout.astro
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Software a medida para tu pequeño negocio" } =
+  Astro.props;
+---
+
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-white text-slate-900">
+    <slot />
+    <a
+      href="https://wa.me/tu-numero"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="fixed bottom-8 right-8 bg-[#25D366] p-3.5 rounded-full shadow-xl hover:scale-110 hover:shadow-green-500/40 transition-all z-50 group flex items-center justify-center"
+      aria-label="Contactar por WhatsApp"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-7 h-7 text-white fill-current"
+        viewBox="0 0 24 24"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M12 4C7.58172 4 4 7.58172 4 12C4 13.6106 4.47721 15.1099 5.31295 16.3861L4.25684 20.2505L8.23697 19.205C9.39958 19.8519 10.741 20.2117 12.1585 20.2117C16.5768 20.2117 20.1585 16.63 20.1585 12.2117C20.1585 7.79343 16.5768 4 12.1585 4H12ZM2.00391 12C2.00391 6.47715 6.48106 2 12.0039 2H12.1624C17.7946 2 22.1624 6.56854 22.1624 12.2117C22.1624 17.8549 17.7946 22.2117 12.1624 22.2117C10.5186 22.2117 8.95556 21.802 7.56846 21.0663L1.5166 22.658L3.15933 16.6477C2.41738 15.2898 2.00391 13.7547 2.00391 12.2117V12ZM16.3756 15.1189C16.1437 15.0116 15.0069 14.4939 14.7937 14.4225C14.5806 14.351 14.4259 14.3153 14.2713 14.5298C14.1166 14.7443 13.672 15.2447 13.5367 15.3877C13.4013 15.5307 13.266 15.5486 13.0341 15.4413C12.8021 15.334 12.0551 15.1065 11.1696 14.3577C10.478 13.7729 10.0112 13.0506 9.87584 12.8361C9.74046 12.6217 9.86156 12.5034 9.97753 12.3965C10.0819 12.3002 10.2096 12.146 10.3255 12.0208C10.4415 11.8956 10.4995 11.7884 10.5768 11.6454C10.6541 11.5024 10.6155 11.3772 10.5575 11.27C10.4995 11.1627 10.0549 10.0329 9.86156 9.58611C9.67323 9.15099 9.48375 9.20999 9.34337 9.20999C9.20803 9.20999 9.05336 9.20106 8.89869 9.20106C8.74402 9.20106 8.4927 9.25468 8.27993 9.46916C8.06716 9.68364 7.46782 10.2198 7.46782 11.3101C7.46782 12.4004 8.3186 13.455 8.43461 13.6158C8.55062 13.7767 10.1166 16.036 12.5139 16.9922C14.7925 17.9011 15.2471 17.7224 15.7497 17.6866C16.2524 17.6509 17.3737 17.0789 17.6057 16.4712C17.8377 15.8635 17.8377 15.3452 17.7603 15.2201C17.683 15.0949 17.6075 15.2261 16.3756 15.1189Z"
+        ></path>
+      </svg>
+    </a>
+  </body>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+<style is:global>
+  /* Estilos que afectan a todo el sitio */
+  :root {
+    --brand-blue: #2499d6;
+  }
+  html {
+    font-family: "Inter", sans-serif;
+    scroll-behavior: smooth;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+  }
 </style>

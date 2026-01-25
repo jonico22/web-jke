@@ -1,0 +1,89 @@
+---
+// src/components/About.astro
+---
+
+<section id="nosotros" class="py-24 overflow-hidden bg-white">
+  <div class="container mx-auto px-4 md:px-12">
+    <div class="flex flex-col lg:flex-row items-center gap-16">
+      <div class="flex-1 relative">
+        <div
+          class="absolute -bottom-6 -left-6 w-32 h-32 bg-[#2499D6]/10 rounded-full -z-10"
+        >
+        </div>
+
+        <div
+          class="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-8 border-white"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800"
+            alt="Equipo de JKE Solutions trabajando"
+            class="w-full h-[400px] object-cover hover:scale-105 transition-transform duration-700"
+          />
+        </div>
+      </div>
+
+      <div class="flex-1 space-y-8">
+        <div>
+          <h3
+            class="text-[#2499D6] font-bold text-sm tracking-widest uppercase mb-3"
+          >
+            Sobre Nosotros
+          </h3>
+
+          <h2
+            class="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight"
+          >
+            Impulsando el éxito de pequeños negocios con
+            <span class="text-[#2499D6]">tecnología inteligente</span>
+          </h2>
+        </div>
+
+        <p class="text-slate-600 text-lg leading-relaxed">
+          En <strong>JKE Solutions</strong>, no solo escribimos código; creamos
+          herramientas que simplifican tu vida diaria. Entendemos los desafíos
+          de las pequeñas empresas y nos especializamos en transformar procesos
+          lentos en sistemas ágiles y automáticos.
+        </p>
+
+        <ul class="space-y-4">
+          {
+            [
+              "Enfoque centrado en la usabilidad",
+              "Soporte técnico cercano y personalizado",
+              "Soluciones escalables que crecen con tu negocio",
+            ].map((item) => (
+              <li class="flex items-center gap-3 text-slate-700 font-medium">
+                <div class="bg-[#2499D6]/10 p-2 rounded-full flex-shrink-0">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-4 w-4 text-[#2499D6]"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="3"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </div>
+                {item}
+              </li>
+            ))
+          }
+        </ul>
+
+        <div class="pt-4">
+          <a
+            href="#contacto"
+            class="inline-block text-slate-900 font-bold border-b-2 border-[#2499D6] pb-1 hover:text-[#2499D6] transition-colors"
+          >
+            Conoce nuestra historia completa →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

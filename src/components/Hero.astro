@@ -1,0 +1,85 @@
+---
+// src/components/Hero.astro
+import HeroMockup from "./HeroMockup.astro";
+---
+
+<section
+  class="relative bg-white overflow-hidden pt-28 pb-16 md:pt-48 md:pb-40 z-0"
+>
+  <div
+    class="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-blue-50/80 rounded-full blur-[80px] md:blur-[120px] -z-10"
+  >
+  </div>
+
+  <div class="container mx-auto px-5 md:px-12 relative z-10">
+    <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+      <div class="flex-1 text-center lg:text-left w-full">
+        <h1
+          class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-[1.15] mb-6 tracking-tight"
+        >
+          Software a Medida para Tu
+          <span class="text-[#2499D6] block mt-1 sm:mt-2 relative inline-block">
+            Pequeño Negocio
+          </span>
+        </h1>
+
+        <p
+          class="text-slate-600 text-base sm:text-lg md:text-xl max-w-xl mx-auto lg:mx-0 mb-8 md:mb-10 leading-relaxed px-2 md:px-0"
+        >
+          Transformamos tus procesos manuales en soluciones digitales
+          eficientes. Potencia el crecimiento de tu empresa con tecnología
+          diseñada para ti.
+        </p>
+
+        <div
+          class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 relative z-20 w-full sm:w-auto"
+        >
+          <a
+            href="#contacto"
+            class="w-full sm:w-auto bg-[#2499D6] hover:bg-[#1d82b8] text-white px-8 py-3.5 md:py-4 rounded-lg font-bold transition-all shadow-xl shadow-[#2499D6]/30 hover:-translate-y-1 text-center flex justify-center items-center gap-2"
+          >
+            Comenzar Ahora
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              ><path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg
+            >
+          </a>
+
+          <a
+            href="#servicios"
+            class="w-full sm:w-auto bg-white hover:bg-slate-50 text-slate-700 border-2 border-slate-100 px-8 py-3.5 md:py-4 rounded-lg font-bold transition-all shadow-sm hover:shadow-md text-center"
+          >
+            Ver Servicios
+          </a>
+        </div>
+      </div>
+
+      <div
+        class="flex-1 w-full max-w-md lg:max-w-full relative isolate mt-4 lg:mt-0"
+      >
+        <div
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] bg-sky-100/80 blur-[60px] md:blur-[100px] rounded-full -z-20"
+        >
+        </div>
+        <div
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] bg-[#2499D6]/20 blur-[40px] md:blur-[70px] rounded-full -z-10"
+        >
+        </div>
+
+        <div
+          class="relative transform hover:scale-[1.01] transition-transform duration-500 z-10 px-2 sm:px-0"
+        >
+          <HeroMockup />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
