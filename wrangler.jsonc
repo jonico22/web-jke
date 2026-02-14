@@ -1,0 +1,5 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "web", // Ponle el nombre que quieras
+  "pages_build_output_dir": "./dist" 
+}
